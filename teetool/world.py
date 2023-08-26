@@ -58,7 +58,7 @@ class World(object):
 
         for (i, this_cluster) in enumerate(self._clusters):
 
-            if ("model" in this_cluster):
+            if ("data" in this_cluster):
                 has_model = "*"
             else:
                 has_model = "-"
@@ -258,8 +258,8 @@ class World(object):
             # all
             list_icluster = range(len(self._clusters))
 
-        if type(list_icluster) is not list:
-            raise TypeError("expected list, not {0}".format(type(list_icluster)))
+        # if type(list_icluster) is not list:
+        #     raise TypeError("expected list, not {0}".format(type(list_icluster)))
 
         for icluster in list_icluster:
             # check validity

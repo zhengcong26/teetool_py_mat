@@ -496,14 +496,16 @@ class Model(object):
 
         ss = None
         # pass previous calculated versions
-        for [ss1, sdwidth1, xx1, yy1, zz1] in self._list_tube:
+        # for [ss1, sdwidth1, xx1, yy1, zz1] in self._list_tube:
             # check if exactly the same
-            if (np.all(xx1==xx) and
-                np.all(yy1==yy) and
-                np.all(zz1==zz) and
-                np.all(sdwidth1==sdwidth)):
-                # copy
-                ss = ss1
+            # print(xx1.shape)
+            # print(xx.shape)
+            # if (np.all(xx1==xx) and
+            #     np.all(yy1==yy) and
+            #     np.all(zz1==zz) and
+            #     np.all(sdwidth1==sdwidth)):
+            #     # copy
+            #     ss = ss1
 
         if ss is None:
             # do the calculations

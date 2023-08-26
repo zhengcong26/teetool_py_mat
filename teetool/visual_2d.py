@@ -6,7 +6,6 @@
 import numpy as np
 from scipy.interpolate import griddata
 import matplotlib.pyplot as plt
-
 import teetool as tt
 
 ## Visual_2d class generates the 2d output using Matplotlib
@@ -274,7 +273,36 @@ class Visual_2d(object):
                         levels=[.5],
                         colors=(lcolours[list_icluster[i]], 'w'),
                         **kwargs)
+            
+            
+    # output data only zc 20230825 
+    def plotTube_data(self,
+                      list_icluster=None,
+                      sdwidth=1,
+                      z=None,
+                      resolution=None,
+                      colour=None,
+                      alpha=.1,
+                      **kwargs):
+        # check validity
+        list_icluster = self._world._check_list_icluster(list_icluster)
 
+        # extract
+        (ss_list, [xx, yy, zz]) = self._world.getTube(list_icluster,
+                                                      sdwidth,
+                                                      z=z,
+                                                      resolution=resolution)
+
+        # unique colours
+        lcolours = tt.helpers.getDistinctColours(len(self._world._clusters),
+                                                 colour)
+        
+        # dataforplot = []
+        # for i, ss1 in enumerate(ss_list):
+        #     dataforplot[i] = [xx,yy,ss1]
+
+        return [ss_list, xx, yy]
+ 
     ## Plots the difference confidence region of variance sigma for two models
     # @param self object pointer
     # @param list_icluster list of 2 clusters to compare

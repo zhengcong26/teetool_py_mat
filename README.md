@@ -1,5 +1,9 @@
 [![Travis CI](https://travis-ci.org/WillemEerland/teetool.svg?branch=master)](https://travis-ci.org/WillemEerland/teetool)
 
+A modification version of teetool for python3.9 and for mat data analysis and plotting
+updated in 20230826 by zhengcong
+
+original version readme
 # teetool
 a package to support with the statistical analysis of trajectory data -- helpful at determining the probability of clusters (collection) of trajectories colliding
 
